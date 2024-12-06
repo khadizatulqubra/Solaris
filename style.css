@@ -1,0 +1,221 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background: radial-gradient(circle, rgb(63, 38, 122), rgb(20, 20, 50));
+    height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    color: #f9cc07;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/* Search Bar Styling */
+#planet-search {
+    display: block;
+    margin: 20px auto; /* Center horizontally */
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    width: 300px;
+    max-width: 90%; /* Adjust width for smaller screens */
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    text-align: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#planet-search::placeholder {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+#planet-search:focus {
+    border-color: #6c63ff;
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+/* Solar System Styling */
+.solar-system {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 2rem;
+}
+
+/* Sun Styling */
+.sun {
+    background-color: rgb(249, 218, 16);
+    width: 140px;
+    height: 610px;
+    border-radius: 50%;
+    position: absolute;
+    left: -100px;
+    top: 79.94px;
+    box-shadow: 0 0 50px 20px rgb(249, 218, 16);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Orbit Styling */
+.orbit {
+    position: relative;
+    border: 100px dashed rgba(255, 255, 255, 0.3); /* Dashed lines for orbits */
+    border-radius: 80%;
+    animation: rotateOrbit 20s linear infinite; /* Optional rotation effect */
+}
+
+/* Orbit Sizes */
+.orbit.mercury { width: 300px; height: 300px; }
+.orbit.venus { width: 450px; height: 450px; }
+.orbit.earth { width: 600px; height: 600px; }
+.orbit.mars { width: 750px; height: 750px; }
+.orbit.jupiter { width: 850px; height: 850px; }
+.orbit.saturn { width: 950px; height: 950px; }
+.orbit.uranus { width: 1050px; height: 1050px; }
+.orbit.neptune { width: 1150px; height: 1150px; }
+
+/* Planet Styling */
+.planet {
+    position: relative;
+    top: 300px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px white;
+    animation: rotatePlanet 10s linear infinite;
+}
+
+/* Planet Hover Effect */
+.planet:hover {
+    transform: scale(1.2);/* Make planet grow on hover */
+    cursor: pointer;
+
+}
+
+/* Planet Colors and Sizes */
+.mercury { background-color: gray; width: 50px; height: 50px; }
+.venus { background-color: peachpuff; width: 70px; height: 70px; }
+.earth { background-color: dodgerblue; width: 70px; height: 70px; }
+.mars { background-color: red; width: 50px; height: 50px; }
+.jupiter { background-color: orange; width: 100px; height: 100px; }
+.saturn { background-color: goldenrod; width: 90px; height: 90px; }
+.uranus { background-color: lightblue; width: 80px; height: 80px; }
+.neptune { background-color: navy; width: 70px; height: 70px; }
+
+/* Planet Positions on Orbits */
+.planet.mercury { transform: translate(150px, 0); }
+.planet.venus { transform: translate(225px, 0); }
+.planet.earth { transform: translate(300px, 0); }
+.planet.mars { transform: translate(375px, 0); }
+.planet.jupiter { transform: translate(425px, 0); }
+.planet.saturn { transform: translate(475px, 0); }
+.planet.uranus { transform: translate(525px, 0); }
+.planet.neptune { transform: translate(575px, 0); }
+
+/* Animation for Planets */
+@keyframes rotatePlanet {
+    from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+/* Animation for Orbits */
+@keyframes rotateOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    text-decoration: none;
+    position: relative;
+    top: -100px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.details-modal {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 40vh;
+    overflow-y: auto;
+    border-top: 2px solid white;
+    display: none;  /* Hidden by default, will show via JS */
+}
+
+#close-details {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-radius: 1px;
+}
+
+#close-details:hover {
+    background-color: #7d1818;
+}
+
+#planet-details {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    position: relative;
+    padding: 50px;
+    top: 500px;
+    height: auto;
+    text-align: center;
+    color: rgb(255, 211, 16);
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+footer p {
+    padding: 10px;
+}

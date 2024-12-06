@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Search for planets -->
+    <div class="header">Solaris</div>
+    <div>
+        <input type="text" id="planet-search" placeholder="Search for a planet">
+    </div>
+
+    <div class="solar-system">
+        <div class="sun"></div>
+        <div class="planet mercury" data-name="Mercury"></div>
+        <div class="planet venus" data-name="Venus"></div>
+        <div class="planet earth" data-name="Earth"></div>
+        <div class="planet mars" data-name="Mars"></div>
+        <div class="planet jupiter" data-name="Jupiter"></div>
+        <div class="planet saturn" data-name="Saturn"></div>
+        <div class="planet uranus" data-name="Uranus"></div>
+        <div class="planet neptune" data-name="Neptune"></div>
+    </div>
+
+    <!-- Details container  -->
+
+    <div id="details-container" class="details-modal">
+        <button id="close-details">Close</button>
+        <div id="planet-details"> <!-- Planet details will be dynamically added here --> </div>
+    </div>
+
+    <script src="main.js"></script>
+    <footer>
+        <p>ZoCom</p>
+    </footer>
+</body>
+
+</html>
